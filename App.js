@@ -1,24 +1,14 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const styles = StyleSheet.create({
-  bigBlue: {
-    color: 'blue',
-    fontSize: 30
-  },
-  red: {
-   color: 'red' 
-  }
-});
-export default class LotsOfStyles extends Component {
+export default class FlexBasics extends Component {
 
   render() {
     return (
-      <View>
-      <Text style={styles.red}>just red</Text>
-      <Text style={styles.bigBlue}>just bigBlue</Text>
-      <Text style={[styles.bigBlue, styles.red]}>bigBlue, then red</Text>
-      <Text style={[styles.red, styles.bigBlue]}>red, then bigBlue</Text>
+      <View style={{flex: 1}}>
+        <View style={{flex:1, backgroundColor: 'powderblue'}}></View>
+        <View style={{flex:2, backgroundColor: 'skyblue'}}></View>
+        <View style={{flex:3, backgroundColor: 'steelblue'}}></View>
       </View>
     );
   }
