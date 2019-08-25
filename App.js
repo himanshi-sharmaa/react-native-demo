@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button , StyleSheet, Text, View } from 'react-native';
 
-export default class FlexBasics extends Component {
+export default class ButtonDemo extends Component {
+
+  _onPressButton() {
+    alert('You tapped a button!');
+  }
 
   render() {
     return (
-      <View style={{flex: 1}}>
-        <View style={{flex:1, backgroundColor: 'powderblue'}}></View>
-        <View style={{flex:2, backgroundColor: 'skyblue'}}></View>
-        <View style={{flex:3, backgroundColor: 'steelblue'}}></View>
+      <View style={StyleSheet.container}>
+        <View style={StyleSheet.buttonContainer}>
+          <Button 
+            onPress = {this._onPressButton}
+            title="Click me"
+          />
+        </View>
       </View>
     );
   }
-}
+} 
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center'
+  },
+  buttonContainer: {
+    margin: 20
+  }
+});
